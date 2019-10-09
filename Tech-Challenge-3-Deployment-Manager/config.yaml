@@ -1,0 +1,41 @@
+imports: 
+- path: network-template.jinja
+- path: subnetwork-template.jinja
+- path: firewall-template.jinja
+
+resources:
+- name: vpc
+  type: network-template.jinja
+
+- name: sn-0
+  type: subnetwork-template.jinja
+  properties:
+    ipCidrRange: 10.10.0.0/16
+    network: $(ref.vpc.selfLink)
+    region: us-central1
+
+- name: sn-1
+  type: subnetwork-template.jinja
+  properties:
+    ipCidrRange: 10.12.0.0/16
+    network: $(ref.vpc.selfLink)
+    region: europe-west2
+
+- name: fw-allow-http-ssh
+  type: firewall-template.jinja
+  properties: 
+    network: $(ref.vpc.selfLink)
+    priority: 786
+    sourceRanges: ["0.0.0.0/0"]
+    IPProtocol: TCP
+    ports: ["80","22"]   
+
+- name: fw-allow-all-internal
+  type: firewall-template.jinja
+  properties:
+    network: $(ref.vpc.selfLink)
+    priority: 1000
+    sourceRanges: ["10.128.0.0/9"]
+    IPProtocol: "TCP"
+    ports: ["0-65535"]
+    

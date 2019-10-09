@@ -1,0 +1,262 @@
+    1  gcloud components install kubectl
+    2  kubectl
+    3  gcloug config set project dach-infraday19-mun-2403
+    4  gcloud config set project dach-infraday19-mun-2403
+    5  gcloud config set compute/zone europe-west1-b
+    6  pwd
+    7  wget https://github.com/kubernetes/examples/tree/master/guestbook
+    8  ls
+    9  pwd
+   10  ls
+   11  git
+   12  ls
+   13  ls -al
+   14  rm -rf guestbook 
+   15  git clone https://github.com/kubernetes/examples/tree/master/guestbook
+   16  git clone https://github.com/kubernetes/examples.git
+   17  ls
+   18  cd examples/guestbook
+   19  ls
+   20  gcloud container clusters create guestbook --num-nodes=2
+   21  gcloud container clusters list
+   22  gcloud container clusters describe guestbook
+   23  ls
+   24  kubectl create -f redis-master-deployment.yaml
+   25  kubectl get pods
+   26  kubectl create -f redis-master-service.yaml
+   27  kubectl get service
+   28  kubectl create -f redis-slave-deployment.yaml
+   29  kubectl create -f redis-slave-service.yaml
+   30  alias k=kubectl
+   31  k get akll
+   32  k get all
+   33  edis-master   ClusterIP   10.35.245.150   <none>        6379/TCP   37s
+   34  service/redis-slav
+   35  kubectl create -f frontend-deployment.yaml
+   36  kubectl get pods -l app=guestbook -l tier=frontend
+   37  ls
+   38  vim frontend-service.yaml 
+   39  kubectl create -f frontend-service.yaml
+   40  kubectl get service frontend
+   41  watch 'kubectl get service frontend'
+   42  kubectl get service frontend
+   43  history
+   44  gcloud container clusters create 
+   45  gsutil 
+   46  gsutil  cp -r   gs://tech-challenge-solutions/Tech-Challenge-2-Case-2 .
+   47  ls
+   48  cd Tech-Challenge-2-Case-2/
+   49  ls
+   50  cat redis-master-service_ILB.yaml 
+   51  ls
+   52  cat Case2-redis-slave-deployment.yaml 
+   53  pwd
+   54  ls
+   55  gcloud container clusters create case2-app --num-nodes=2
+   56  gcloud config set project dach-infraday19-mun-2403
+   57  gcloud config set compute/zone europe-west1-nb
+   58  gcloud config set compute/zone europe-west1-b
+   59  gcloud container clusters create case2-data --num-nodes=2
+   60  cat ~/.kube/config 
+   61  gcloud container clusters create case2-app --num-nodes=2
+   62  ls
+   63  cd ../
+   64  ls
+   65  k apply -f examples/guestbook/redis-master-deployment.yaml 
+   66  alias k=kubectl
+   67  k apply -f examples/guestbook/redis-master-deployment.yaml 
+   68  k k get all
+   69  k get all
+   70  k delete deploy redis-master
+   71  cat ~/.kube/config 
+   72  k config 
+   73  k config use-context gke_dach-infraday19-mun-2403_europe-west1-b_case2-data
+   74  k apply -f examples/guestbook/redis-master-deployment.yaml 
+   75  ls Tech-Challenge-2-Case-2/
+   76  ls
+   77  ls Tech-Challenge-2-Case-2/
+   78  ls
+   79  pwd
+   80  ls
+   81  cd Tech-Challenge-2-Case-2/
+   82  ls
+   83  cat redis-master-service_ILB.yaml 
+   84  l
+   85  ks
+   86  k apply -f redis-master-service_ILB.yaml 
+   87  k get all
+   88  ls
+   89  cat Case2-redis-slave-deployment.yaml 
+   90  vim Case2-redis-slave-deployment.yaml 
+   91  k apply -f Case2-redis-slave-deployment.yaml 
+   92  ls
+   93  cat redis-slave-service_ILB.yaml 
+   94  k apply -f redis-slave-service_ILB.yaml 
+   95  ls
+   96  cat redis-master-service_ILB.yaml 
+   97  k get all
+   98  k run test --image=busybox:1.28 --restart=Never --rm -- nc -v -z -w 2 10.132.0.8 6379
+   99  k run test --image=busybox:1.28 --restart=Never -- nc -v -z -w 2 10.132.0.8 6379
+  100  k get pod
+  101  k delete pod test
+  102  k run test --image=busybox:1.28 --restart=Never --rm -it -- nc -v -z -w 2 10.132.0.8 6379
+  103  k config view
+  104  k config use-context gke_dach-infraday19-mun-2403_europe-west1-b_case2-app
+  105  k get all
+  106  ls
+  107  cat Case2-frontend-deployment.yaml 
+  108  vim Case2-frontend-deployment.yaml 
+  109  k apply -f Case2-frontend-deployment.yaml 
+  110  ls
+  111  cat Case2-frontend-service.yaml 
+  112  k apply -f Case2-frontend-service.yaml 
+  113  k get all
+  114  watch 'k get all'
+  115  watch 'kubectl get all'
+  116  k get all
+  117  ls
+  118  pwd
+  119  ls
+  120  gzip 
+  121  gzip -h
+  122  tar -h
+  123  tar 
+  124  tar --help
+  125  man tar
+  126  tar vzf Tech-Challenge-2-Case-2/ .
+  127  tar vzf gke-challenge-2  Tech-Challenge-2-Case-2
+  128  tar vzf gke-challenge-2.tar.gz  Tech-Challenge-2-Case-2
+  129  tar cvzf gke-challenge-2.tar.gz  Tech-Challenge-2-Case-2
+  130  ls
+  131  ls 0al
+  132  ls -al
+  133  aws
+  134  gsutil
+  135  gsutil cp gke-challenge-2.tar.gz gs://test-hisashi/
+  136  k get svc
+  137  kubectl get svc
+  138  k config use-context gke_dach-infraday19-mun-2403_europe-west1-b_case2-data
+  139  alias k=kubectl
+  140  k config use-context gke_dach-infraday19-mun-2403_europe-west1-b_case2-data
+  141  k get svc
+  142  k config view
+  143  k config use-context
+  144  k config use-context gke_dach-infraday19-mun-2403_europe-west1-b_case2-app
+  145  k get svc
+  146  gcloud container clusters describe <cluster-name> --region=<region-name> | grep Ipv4Cidr
+  147  gcloud container clusters describe case2-data --region=europe-west1-b | grep Ipv4Cidr
+  148  gcloud container clusters describe frontend --region europe-west1-b | grep Ipv4Cidr
+  149  gcloud container clusters describe case2-data --region europe-west1-b | grep Ipv4Cidr
+  150  k get svc
+  151  k config use-context gke_dach-infraday19-mun-2403_europe-west1-b_case2-data
+  152  k get svc
+  153  k run test --image=busybox:1.28 --restart=Never --rm -it -- nc -v -z -w 2 10.132.0.8 6379
+  154  kubectl run test --image=busybox:1.28 --restart=Never --rm -it -- nc -v -z -w 2 10.132.0.8 6379
+  155  ls
+  156  gsutil -m rsync -rd gs://your-gcs-bucket s3://your-s3-bucket
+  157  gsutil -m rsync -rd gs://test-hisashi s3://cr-test-hisashi
+  158  aws configure
+  159  uname -a
+  160  python3 --version
+  161  pip3 --version
+  162  aws configure
+  163  aws
+  164  aws --version
+  165  pip3 install --upgrade --user awscli
+  166  which aws
+  167  aws
+  168  pip install --upgrade pip
+  169  pip3 install awscli --upgrade --user
+  170  aws
+  171  which pip3
+  172  pip3 install awscli
+  173  which aws
+  174  pip install --upgrade pip
+  175  pip3 install awscli --upgrade --user
+  176  pip3 install --upgrade --user awscli
+  177  pip3 list -o
+  178  pip install --upgrade --user awscli
+  179  which aws
+  180  pip3 install --upgrade --user awscli
+  181  pip3 install --user awscli
+  182  aws
+  183  which aws
+  184  echo $PATH
+  185  echo $PATH | grep /usr/local/lib
+  186  PATH=$PATH:/usr/local/lib
+  187  echo $PATH | grep /usr/local/lib
+  188  aws
+  189  vim /etc/boto.cfg
+  190  sudo vim /etc/boto.cfg
+  191  gsutil -m rsync -rd gs://test-hisashi s3://cr-test-hisashi
+  192  vim ~/.boto
+  193  sudo vim ~/.boto
+  194  gsutil -m rsync -rd gs://test-hisashi s3://cr-test-hisashi
+  195  ls
+  196  gsutil cp gs://tech-challenge-solutions/Tech-Challenge-3-Deployment-Manager/* .
+  197  ls
+  198  ls -al
+  199  rm *.jinja
+  200  ls
+  201  gsutil cp gs://tech-challenge-solutions/Tech-Challenge-3-Deployment-Manager .
+  202  gsutil cp gs://tech-challenge-solutions/Tech-Challenge-3-Deployment-Manager/ .
+  203  ls
+  204  gsutil cp gs://tech-challenge-solutions/Tech-Challenge-3-Deployment-Manager/* Tech-Challenge-3-Deployment-Manager
+  205  ls
+  206  mkdir Tech-Challenge-3-Deployment-Manager
+  207  gsutil cp gs://tech-challenge-solutions/Tech-Challenge-3-Deployment-Manager/* Tech-Challenge-3-Deployment-Manager
+  208  ls
+  209  cd Tech-Challenge-3-Deployment-Manager/
+  210  ls
+  211  clear
+  212  ls
+  213  cat network-template.jinja 
+  214  cat subnetwork-template.jinja 
+  215  cat firewall-template.jinja 
+  216  ls
+  217  cat config.yaml 
+  218  vim config.yaml 
+  219  gcloud
+  220  gcloud deployment-manager
+  221  gcloud deployment-manager deployments
+  222  gcloud deployment-manager deployments create
+  223  gcloud deployment-manager deployments create network-component --config config.yaml
+  224  vim config.yaml 
+  225  gcloud deployment-manager deployments create network-component --config config.yaml
+  226  ls
+  227  cd ../
+  228  gsutil cp gs://tech-challenge-solutions/Tech-Challenge-3-Deployment-Manager/* Tech-Challenge-3-Deployment-Manager
+  229  ls
+  230  cd Tech-Challenge-3-Deployment-Manager/
+  231  ls
+  232  cat config.yaml 
+  233  gcloud deployment-manager deployments create networks --config config.yaml
+  234  vim config.yaml 
+  235  gcloud deployment-manager deployments create network-component --config config.yaml
+  236  gsutil cp gs://tech-challenge-solutions/Tech-Challenge-3-StartupScript/startup-script-v1.sh .
+  237  ls
+  238  cat startup-script-v1.sh 
+  239  ILB_IP=35.244.245.109
+  240  echo $ILB_IP
+  241  for (( i=0;i<20 )); do curl $ILB_IP; sleep 3; done;
+  242  for ((i=0;i<20)); do curl $ILB_IP; sleep 3; done;
+  243  for (( i=0;i<20; )); do curl $ILB_IP; sleep 3; done;
+  244  for (( i=0;i<20; )); do curl $ILB_IP; done;
+  245  history
+  246  ls
+  247  cat Tech-Challenge-3-Deployment-Manager/startup-script-v1.sh 
+  248  ls
+  249  tar cvzf gke-demo-challenge.tar.gzip Tech-Challenge-2-Case-2/ Tech-Challenge-3-Deployment-Manager/
+  250  ls
+  251  ls -al
+  252  tar vxzf gke-demo-challenge.tar.gzip
+  253  ls
+  254  tar cvzf gke-demo-challenge.tar.gz Tech-Challenge-2-Case-2/ Tech-Challenge-3-Deployment-Manager/
+  255  ls
+  256  tar vxzf gke-demo-challenge.tar.gz
+  257  ls
+  258  tar -vxzf gke-demo-challenge.tar.gz
+  259  ls
+  260  gsutil cp gke-demo-challenge.tar.gz gs://test-hisashi/
+  261  history
+  262  history > command_history.txt
